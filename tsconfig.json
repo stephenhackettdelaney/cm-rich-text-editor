@@ -1,0 +1,40 @@
+{
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+    ],
+    "exclude": [
+        "node_modules",
+        "lib",
+        "package-playground-ts"
+    ],
+    // -------------------------
+    "compilerOptions": {
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ES2019"
+        ],
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "target": "es2022",
+        "module": "commonjs",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "isolatedModules": true,
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noEmit": false,
+        "declaration": true,
+        "outDir": "./lib",
+        "baseUrl": ".",
+        "paths": {
+            "~/*": [
+                "components/*"
+            ],
+        },
+    }
+}
