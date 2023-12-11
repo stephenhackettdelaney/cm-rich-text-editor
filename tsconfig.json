@@ -2,6 +2,10 @@
     "include": [
         "**/*.ts",
         "**/*.tsx",
+        "**/*.jsx",
+        "types/**/*.d.ts",
+        "components/TiptapEditor.tsx",
+        "icons/index.js"
     ],
     "exclude": [
         "node_modules",
@@ -16,16 +20,20 @@
             "ES2019"
         ],
         "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        // "allowImportingTsExtensions": true,
         "skipLibCheck": true,
+        // "target": "es2022",
         "target": "es2022",
-        "module": "commonjs",
+        "module": "ESNext",
         "jsx": "react-jsx",
         "allowJs": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "moduleDetection": "force",
         "isolatedModules": true,
-        "strict": true,
+        "strict": false,
+        "noImplicitAny": false,
         "noUncheckedIndexedAccess": true,
         "noEmit": false,
         "declaration": true,
@@ -33,7 +41,8 @@
         "baseUrl": ".",
         "paths": {
             "~/*": [
-                "components/*"
+                "components/*",
+                "icons/*"
             ],
         },
     }
