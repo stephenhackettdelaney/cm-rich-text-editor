@@ -1,0 +1,11 @@
+.github/
+components/
+example/
+.icons/
+node_modules/
+.eslintrc.js
+.gitignore
+.gitmodules
+index.ts
+tsconfig.json
+yarn-error.log
