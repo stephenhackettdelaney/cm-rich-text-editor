@@ -3,8 +3,21 @@
   "version": "1.0.0",
   "description": "Rich-text-editor using TipTap",
   "main": "lib/index.js",
-  "author": "CoMedia Design",
+  "author": "stephenhackettdelaney",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/stephenhackettdelaney/cm-rich-text-editor",
+    "type": "git"
+  },
+  "bugs": "https://github.com/stephenhackettdelaney/cm-rich-text-editor/issues",
+  "keywords": [
+    "rich-text-editor",
+    "tiptap",
+    "tina.io"
+  ],
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "start:watch": "tsc --watch",
     "start:example": "cd example && npm start",
