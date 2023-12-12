@@ -7,6 +7,24 @@
   pointer-events: none;
 }
 
+@font-face {
+  font-family: "Whisper";
+  src: url("./fonts/Whisper-Regular.ttf");
+  font-weight: 400;  
+}
+
+@font-face {
+  font-family: "Kalnia-Light";
+  src: url("./fonts/Kalnia-Light.ttf");
+  font-weight: 300;  
+}
+
+@font-face {
+  font-family: "PTSansNarrow-Regular";
+  src: url("./fonts/PTSansNarrow-Regular.ttf");
+  font-weight: 300;  
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +53,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.tip-tap p {
+  color: red !important;
 }

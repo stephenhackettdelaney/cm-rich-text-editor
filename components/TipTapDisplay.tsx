@@ -14,87 +14,78 @@ import { generateHTML } from "@tiptap/html"
 
 import styled from "styled-components"
 
-export function TipTapDisplay({ content }) {
-    const json = content ? JSON.parse(content) : {}
+export function TipTapDisplay({ content, ...props }) {
+  const json = content ? JSON.parse(content) : {}
 
-    const output = useMemo(() => {
-        return generateHTML(json, [
-            Document,
-            Text,
-            TextStyle,
-            // Color.configure({
-            //   types: ["textStyle"],
-            // }),
-            Underline,
-            Image.configure({
-                HTMLAttributes: {
-                    class: "tiptapImage",
-                },
-            }),
-            TextAlign.configure({
-                types: ["heading", "paragraph", "image"],
-                alignments: ["left", "center", "right"],
-                defaultAlignment: "left",
-            }),
-            Link,
-            // Link.configure({
-            //   inclusive: true,
-            // }),
-            StarterKit.configure({
-                bulletList: {
-                    keepMarks: true,
-                    keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-                },
-                orderedList: {
-                    keepMarks: true,
-                    keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-                },
-                heading: {
-                    levels: [1, 2, 3],
-                },
-                paragraph: {
-                    HTMLAttributes: {
-                        class: "paragraph",
-                    },
-                },
-            }),
-        ])
-    }, [json])
+  const output = useMemo(() => {
+    return generateHTML(json, [
+      Document,
+      Text,
+      TextStyle,
+      // Color.configure({
+      //   types: ["textStyle"],
+      // }),
+      Underline,
+      Image.configure({
+        HTMLAttributes: {
+          class: "tiptapImage",
+        },
+      }),
+      TextAlign.configure({
+        types: ["heading", "paragraph", "image"],
+        alignments: ["left", "center", "right"],
+        defaultAlignment: "left",
+      }),
+      Link,
+      // Link.configure({
+      //   inclusive: true,
+      // }),
+      StarterKit.configure({
+        bulletList: {
+          keepMarks: true,
+          keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+        },
+        orderedList: {
+          keepMarks: true,
+          keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+        },
+        heading: {
+          levels: [1, 2, 3],
+        },
+        paragraph: {
+          HTMLAttributes: {
+            class: "paragraph",
+          },
+        },
+      }),
+    ])
+  }, [json])
 
-    return (
-        <TiptapDisplayWrapper className="w-full rich-text-tiptap">
-            <div dangerouslySetInnerHTML={{ __html: output }} />
-        </TiptapDisplayWrapper>
-    )
+  return (
+    <TiptapDisplayWrapper className="tip-tap" {...props}>
+      <div dangerouslySetInnerHTML={{ __html: output }} />
+    </TiptapDisplayWrapper>
+  )
 }
 
-const TiptapDisplayWrapper = styled.article`
-  .editor {
-    border: 2px solid #e2e2e2 !important;
-    border-top: 0 !important;
-    background-color: #fff !important;
-    padding: 8px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-  }
-
-  .tiptap {
-    min-height: 180px;
-    outline: none;
-  }
-
-  h1,
-  h2,
-  h3,
-  p {
-    color: #000;
-  }
-
+const TiptapDisplayWrapper = styled.article<{
+  $FontFamily_Headings?: string;
+  $Color_Headings?: string;
+  $FontFamily_Paragraph?: string;
+  $Color_Paragraph?: string;
+}>`
   h1,
   h2,
   h3 {
-    color: #000;
-    font-family: "degular-display", sans-serif !important;
+    color: ${({ $Color_Headings }) => $Color_Headings ? $Color_Headings : "#000"};
+    font-family: ${({ $FontFamily_Headings }) => $FontFamily_Headings ? $FontFamily_Headings : "sans-serif"};
+
+  }
+
+  p {
+    color: ${({ $Color_Paragraph }) => $Color_Paragraph ? $Color_Paragraph : "#000"};
+    font-family: ${({ $FontFamily_Paragraph }) => $FontFamily_Paragraph ? $FontFamily_Paragraph : "sans-serif"};
+
   }
 
   h1 {
