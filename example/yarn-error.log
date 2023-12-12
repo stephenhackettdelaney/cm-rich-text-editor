@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/stephen/.nvm/versions/node/v16.14.0/bin/node /Users/stephen/.nvm/versions/node/v16.14.0/bin/yarn add @tiptap/pm/state
+  /Users/stephen/.nvm/versions/node/v16.14.0/bin/node /Users/stephen/.nvm/versions/node/v16.14.0/bin/yarn add cm-rich-text-editor: link:../lib
 
 PATH: 
   /Users/stephen/.pyenv/shims:/Users/stephen/flutter/bin:/Users/stephen/.nvm/versions/node/v16.14.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/stephen/Library/Python/3.11/bin
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@tiptap%2fpm/state: Request "https://registry.yarnpkg.com/@tiptap%2fpm/state" returned a 405
+  Error: https://registry.yarnpkg.com/cm-rich-text-editor:%20link:..%2flib: Request "https://registry.yarnpkg.com/cm-rich-text-editor:%20link:..%2flib" returned a 405
       at Request.params.callback [as _callback] (/Users/stephen/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:66154:18)
       at Request.self.callback (/Users/stephen/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:520:28)
@@ -49,7 +49,6 @@ npm manifest:
       "@types/node": "^16.7.13",
       "@types/react": "^18.0.0",
       "@types/react-dom": "^18.0.0",
-      "cm-rich-text-editor": "file:../lib",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
       "react-scripts": "5.0.1",
@@ -6730,6 +6729,10 @@ Lockfile:
     dependencies:
       prelude-ls "~1.1.2"
       type-check "~0.3.2"
+  
+  "lib@link:../lib":
+    version "0.0.0"
+    uid ""
   
   lilconfig@^2.0.3, lilconfig@^2.1.0:
     version "2.1.0"

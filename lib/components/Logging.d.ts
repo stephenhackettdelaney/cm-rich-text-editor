@@ -1,1 +1,3 @@
-export declare function Heading(): import("react/jsx-runtime").JSX.Element;
+/// <reference types="react" />
+declare const Heading: React.FC;
+export default Heading;

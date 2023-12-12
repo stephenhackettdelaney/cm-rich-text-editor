@@ -1,5 +1,5 @@
 {
-  "name": "package-playground-ts",
+  "name": "example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,8 +20,8 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "cm-rich-text-editor": "file:../lib",
-    "react": "^18.2.0",
+    "lib": "link:../lib",
+    "react": "link:../node_modules/react",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "styled-components": "file:../node_modules/styled-components",
