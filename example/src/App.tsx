@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { TipTapEditor, TipTapDisplay } from "lib"
+import { TipTapEditor, TipTapText } from "lib"
 import styled from "styled-components"
 
 function App() {
@@ -28,23 +28,23 @@ function App() {
       </section>
       <section className='display-container'>
         <h1>{title}</h1>
-        <TipTapDisplay
+        <TipTapText
           content={json}
-          {...styleProps}
+        // {...styleProps}
         />
       </section>
     </Grid>
   );
 }
 
-const styleProps = {
-  $FontFamily_Headings: "PTSansNarrow-Regular",
-  $Color_Headings: "green",
-  // - - - - - - - - - - - - - - - - - 
-  $FontFamily_Paragraph: "Kalnia-Light",
-  $Color_Paragraph: "blue",
-  // - - - - - - - - - - - - - - - - - 
-}
+// const styleProps = {
+//   $FontFamily_Headings: "PTSansNarrow-Regular",
+//   $Color_Headings: "green",
+//   // - - - - - - - - - - - - - - - - - 
+//   $FontFamily_Paragraph: "Kalnia-Light",
+//   $Color_Paragraph: "blue",
+//   // - - - - - - - - - - - - - - - - - 
+// }
 
 const Grid = styled.div`
   height: 100vh;
@@ -65,7 +65,6 @@ const Grid = styled.div`
     }
   }
   
-
   section.display-container {
     padding: 32px
   }

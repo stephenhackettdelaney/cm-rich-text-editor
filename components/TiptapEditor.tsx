@@ -253,7 +253,7 @@ export function TipTapEditor({ ...input }) {
     // }, [])
 
     return (
-        <TiptapWrapper>
+        <TiptapWrapper className="tip-tap">
             <MenuBar editor={editor} />
             <EditorContent editor={editor} className="editor" />
         </TiptapWrapper>
@@ -319,7 +319,12 @@ function MenuDivider() {
     )
 }
 
-const TiptapWrapper = styled.section`
+const TiptapWrapper = styled.section< {
+    $FontFamily_Headings?: string;
+    $Color_Headings?: string;
+    $FontFamily_Paragraph?: string;
+    $Color_Paragraph?: string;
+}>`
   .editor {
     border: 2px solid #e2e2e2 !important;
     border-top: 0 !important;
@@ -336,16 +341,16 @@ const TiptapWrapper = styled.section`
 
   h1,
   h2,
-  h3,
-  p {
-    color: #000;
+  h3 {
+    color: ${({ $Color_Headings }) => $Color_Headings ? $Color_Headings : "#000"};
+    font-family: ${({ $FontFamily_Headings }) => $FontFamily_Headings ? $FontFamily_Headings : "sans-serif"};
+
   }
 
-  h1,
-  h2,
-  h3 {
-    color: #000;
-    font-family: "degular-display", sans-serif !important;
+  p {
+    color: ${({ $Color_Paragraph }) => $Color_Paragraph ? $Color_Paragraph : "#000"};
+    font-family: ${({ $FontFamily_Paragraph }) => $FontFamily_Paragraph ? $FontFamily_Paragraph : "sans-serif"};
+
   }
 
   h1 {

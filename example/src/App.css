@@ -56,6 +56,15 @@
 }
 
 
-.tip-tap p {
+.tip-tap 
+h1,
+h2,
+h3 {
+  font-family: "PTSansNarrow-Regular" !important;
   color: red !important;
+}
+
+p {
+  font-family: "Kalnia-Light" !important;
+  color: blue !important;
 }

@@ -14,7 +14,7 @@ import { generateHTML } from "@tiptap/html"
 
 import styled from "styled-components"
 
-export function TipTapDisplay({ content, ...props }) {
+export function TipTapText({ content, ...props }) {
   const json = content ? JSON.parse(content) : {}
 
   const output = useMemo(() => {
