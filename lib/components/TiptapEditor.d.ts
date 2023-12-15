@@ -1,3 +1,3 @@
-export declare function TipTapEditor({ ...input }: {
+export default function TipTapEditor({ ...input }: {
     [x: string]: any;
 }): import("react/jsx-runtime").JSX.Element;

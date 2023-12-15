@@ -30,7 +30,6 @@ function App() {
         <h1>{title}</h1>
         <TipTapText
           content={json}
-        // {...styleProps}
         />
       </section>
     </Grid>

@@ -1,6 +1,6 @@
 {
   "name": "cm-rich-text-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rich-text-editor using TipTap",
   "main": "lib/index.js",
   "author": "stephenhackettdelaney",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "start:watch": "tsc --watch",
-    "start:example": "cd example && npm start",
+    "start:example": "cd example && PORT=3009 npm start",
     "start": "npm-run-all -p start:watch start:example"
   },
   "devDependencies": {

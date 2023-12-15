@@ -3,7 +3,7 @@ import { EditorContent, useEditor } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 import TextAlign from "@tiptap/extension-text-align"
 import Image from "@tiptap/extension-image"
-import Underline from "@tiptap/extension-underline"
+import { Underline } from "@tiptap/extension-underline"
 import { Color } from "@tiptap/extension-color"
 import TextStyle from "@tiptap/extension-text-style"
 import Link from "@tiptap/extension-link"
@@ -183,7 +183,7 @@ const MenuBar = ({ editor }) => {
     )
 }
 
-export function TipTapEditor({ ...input }) {
+export default function TipTapEditor({ ...input }) {
     const editor = useEditor({
         editorProps: {
             attributes: {

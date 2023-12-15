@@ -2,29 +2,27 @@ import { useMemo } from "react"
 
 import StarterKit from "@tiptap/starter-kit"
 import Image from "@tiptap/extension-image"
-import Underline from "@tiptap/extension-underline"
+import { Underline } from "@tiptap/extension-underline"
 import TextAlign from "@tiptap/extension-text-align"
-// import { Color } from "@tiptap/extension-color"
+import { Color } from "@tiptap/extension-color"
 import TextStyle from "@tiptap/extension-text-style"
 import Link from "@tiptap/extension-link"
-import Document from "@tiptap/extension-document"
-import Text from "@tiptap/extension-text"
 
 import { generateHTML } from "@tiptap/html"
 
 import styled from "styled-components"
 
-export function TipTapText({ content, ...props }) {
+console.log("Underline : ", Underline)
+
+export default function TipTapText({ content, ...props }) {
   const json = content ? JSON.parse(content) : {}
 
   const output = useMemo(() => {
     return generateHTML(json, [
-      Document,
-      Text,
       TextStyle,
-      // Color.configure({
-      //   types: ["textStyle"],
-      // }),
+      Color.configure({
+        types: ["textStyle"],
+      }),
       Underline,
       Image.configure({
         HTMLAttributes: {
@@ -37,9 +35,7 @@ export function TipTapText({ content, ...props }) {
         defaultAlignment: "left",
       }),
       Link,
-      // Link.configure({
-      //   inclusive: true,
-      // }),
+      StarterKit,
       StarterKit.configure({
         bulletList: {
           keepMarks: true,
